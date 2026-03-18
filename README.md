@@ -7,7 +7,7 @@ Estoy construyendo productos digitales con foco en usabilidad, rendimiento y dis
 ---
 
 ## 🧠 Sobre mí
-- 📍 Vivo en [tu ciudad / país] (opcional)
+- 📍 Vivo en Cumaná, Venezuela
 - 🧑‍💻 Aprendiendo y mejorando cada día como desarrollador Full Stack
 - 🎨 Apasionado por el diseño UX/UI y la accesibilidad
 - 🌱 Actualmente practicando **React**, **TypeScript** y **Diseño de Interfaces**
@@ -28,9 +28,7 @@ Estos son algunos ejemplos de lo que he construido / en lo que he trabajado:
 - **NexoDent** — Proyecto de sistema para clínica dental
 - **OneInventory** — Aplicación de gestión de inventarios
 - **RenewedPlayer** — Reproductor de música con UI personalizada
-- **ZeroPoint** — Proyecto personal (concepto libre)
-
-> Todos estos proyectos están disponibles en este repositorio bajo `public/Projects/`.
+- **ZeroPoint** — Proyecto para una Institucion educativa
 
 ---
 
