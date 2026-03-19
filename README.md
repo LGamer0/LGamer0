@@ -17,7 +17,7 @@ Estoy construyendo productos digitales con foco en usabilidad, rendimiento y dis
 ## 🛠️ Tecnologías & herramientas que uso
 - **Frontend:** React, TypeScript, Vite, CSS (Flexbox, Grid)
 - **Backend:** Node.js, Express (o tu stack si aplicas)
-- **Diseño UX/UI:** Figma, prototipos, diseño responsivo
+- **Diseño UX/UI:** Stitch, prototipos, diseño responsivo
 - **Otras:** Git, GitHub, HTML, APIs REST
 
 ---
@@ -34,6 +34,7 @@ Estos son algunos ejemplos de lo que he construido / en lo que he trabajado:
 
 ## 📫 ¿Hablamos?
 [![Gmail Badge](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:Luiscvr05@gmail.com)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/Luisvelasquezdev)
 
 > También puedes encontrarme en GitHub: [github.com/LGamer0](https://github.com/LGamer0)
 
