@@ -24,6 +24,11 @@ interface Skill {
   category: string;
 }
 
+const getPublicAsset = (path: string) => {
+  const normalized = path.startsWith('/') ? path.slice(1) : path;
+  return `${import.meta.env.BASE_URL}${normalized}`;
+};
+
 // --- Data ---
 const skills: Skill[] = [
   { name: "React", icon: <FaReact />, level: "Experto", category: "Frontend" },
@@ -370,7 +375,7 @@ const Projects = () => {
                       <div key={i} className="flex-1 h-full border-r border-white/5 overflow-hidden relative bg-[#111]">
                         <motion.img
                           initial={false}
-                          src={img}
+                          src={getPublicAsset(img)}
                           className="absolute inset-0 h-full w-full object-cover skew-x-12 scale-[1.5] grayscale group-hover:grayscale-0 transition-all duration-1000"
                           alt="Project Slice"
                           onError={() => {
@@ -497,7 +502,7 @@ const Projects = () => {
                           className="relative aspect-video rounded-xl overflow-hidden cursor-pointer group border border-white/10 hover:border-cyan-500/50 transition-colors"
                           onClick={() => openLightbox(selected.images, i)}
                         >
-                          <img src={img} alt={`${selected.name} preview ${i}`} className="w-full h-full object-cover filter brightness-75 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500" />
+                          <img src={getPublicAsset(img)} alt={`${selected.name} preview ${i}`} className="w-full h-full object-cover filter brightness-75 group-hover:brightness-110 group-hover:scale-105 transition-all duration-500" />
                           <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
                             <span className="text-xs font-bold text-white px-3 py-1 bg-white/20 backdrop-blur-md rounded-full">AMPLIAR</span>
                           </div>
