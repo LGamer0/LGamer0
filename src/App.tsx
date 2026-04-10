@@ -4,7 +4,7 @@ import { Dialog } from '@headlessui/react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
 // Icons
-import { FaJs, FaReact, FaNodeJs, FaGitAlt, FaEnvelope, FaGithub, FaLinkedin, FaTimes, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaJs, FaReact, FaNodeJs, FaGitAlt, FaEnvelope, FaGithub, FaLinkedin, FaTimes, FaExternalLinkAlt, FaChevronLeft, FaChevronRight, FaPython } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiTauri, SiElectron, SiVite, SiCapacitor, SiExpress, SiPnpm } from 'react-icons/si';
 
 // --- Interfaces ---
@@ -37,6 +37,7 @@ const skills: Skill[] = [
   { name: "JavaScript", icon: <FaJs />, level: "Experto", category: "Frontend" },
   { name: "Node.js", icon: <FaNodeJs />, level: "Intermedio", category: "Backend" },
   { name: "Express", icon: <SiExpress />, level: "Intermedio", category: "Backend" },
+  { name: "Python", icon: <FaPython />, level: "Intermedio", category: "Backend" },
   { name: "Tauri", icon: <SiTauri />, level: "Intermedio", category: "Desktop/Mobile" },
   { name: "Vite", icon: <SiVite />, level: "Experto", category: "Frontend" }, // Agrupado en Frontend o Tools
   { name: "Git", icon: <FaGitAlt />, level: "Experto", category: "Frontend" },
@@ -120,7 +121,7 @@ const projects: Project[] = [
 // --- Components ---
 
 const Background = () => (
-  <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-[#050505]">
+  <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden bg-background">
     <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-violet-600/10 blur-[120px]" />
     <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-cyan-600/10 blur-[150px]" />
     <div className="absolute top-[40%] left-[60%] w-[30vw] h-[30vw] rounded-full bg-fuchsia-600/10 blur-[100px]" />
@@ -140,10 +141,10 @@ const Navbar = () => (
     </div>
     <a
       href="mailto:Luiscvr05@gmail.com"
-      className="relative overflow-hidden rounded-full p-[1px] group hidden md:block pointer-events-auto"
+      className="relative overflow-hidden rounded-full p-px group hidden md:block pointer-events-auto"
     >
-      <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-violet-500 animate-spin-slow rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
-      <div className="bg-[#050505] px-6 py-2 rounded-full relative group-hover:bg-transparent transition-colors duration-300">
+      <span className="absolute inset-0 bg-linear-to-r from-cyan-400 to-violet-500 animate-spin-slow rounded-full opacity-70 group-hover:opacity-100 transition-opacity" />
+      <div className="bg-background px-6 py-2 rounded-full relative group-hover:bg-transparent transition-colors duration-300">
         <span className="text-sm font-medium tracking-wide text-white group-hover:text-black transition-colors duration-300">
           Disponible para trabajar
         </span>
@@ -168,12 +169,12 @@ const Hero = () => {
         transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
       >
         <p className="text-cyan-400 font-mono text-sm md:text-base mb-6 tracking-widest uppercase flex items-center gap-4">
-          <span className="w-12 h-[1px] bg-cyan-400/50"></span>
+          <span className="w-12 h-px bg-cyan-400/50"></span>
           Ingeniería en Informática
         </p>
         <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black tracking-tighter leading-[0.85] text-white overflow-hidden mb-8">
           <span className="block hover:translate-x-4 transition-transform duration-500">CREATIVE</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-400 block hover:translate-x-4 transition-transform duration-500 delay-75">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-violet-500 to-fuchsia-400 block hover:translate-x-4 transition-transform duration-500 delay-75">
             DEVELOPER.
           </span>
         </h1>
@@ -270,14 +271,14 @@ const BentoSkills = () => {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.4, type: "spring" }}
                 className={`
-                  group relative bg-white/[0.02] border border-white/[0.05] rounded-3xl p-6 flex flex-col justify-between overflow-hidden hover:bg-white/[0.05] transition-colors hover:border-white/[0.1]
+                  group relative bg-white/2 border border-white/5 rounded-3xl p-6 flex flex-col justify-between overflow-hidden hover:bg-white/5 transition-colors hover:border-white/1
                   ${isLarge ? 'col-span-2 row-span-2' : ''}
                   ${isTall ? 'col-span-2 md:col-span-1 row-span-2' : ''}
                   ${isWide ? 'col-span-2' : ''}
                   ${!isLarge && !isTall && !isWide ? 'col-span-2 md:col-span-1' : ''}
                 `}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 to-violet-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="flex justify-between items-start">
                   <div className={`text-white/40 group-hover:text-cyan-400 transform group-hover:scale-110 transition-all duration-300 origin-top-left ${isLarge ? 'text-6xl' : 'text-4xl'}`}>
@@ -363,7 +364,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: idx * 0.1, duration: 0.6 }}
-            className="group relative block w-full bg-[#080808] border border-white/[0.05] hover:border-white/10 rounded-[2.5rem] p-8 md:p-14 overflow-hidden transition-all duration-500 cursor-pointer hover:shadow-[0_0_80px_rgba(34,211,238,0.05)]"
+            className="group relative block w-full bg-[#080808] border border-white/5 hover:border-white/10 rounded-[2.5rem] p-8 md:p-14 overflow-hidden transition-all duration-500 cursor-pointer hover:shadow-[0_0_80px_rgba(34,211,238,0.05)]"
             onClick={() => setSelected(project)}
           >
             {/* Integrated Skewed Background Previews */}
@@ -388,7 +389,7 @@ const Projects = () => {
                 )}
               </div>
               {/* Fade Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/60 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-r from-[#080808] via-[#080808]/60 to-transparent z-10" />
             </div>
 
             <div className="relative z-20 flex flex-col md:flex-row md:items-center justify-between gap-8 h-full">
@@ -398,7 +399,7 @@ const Projects = () => {
                     {project.category}
                   </span>
                 </div>
-                <h3 className="text-4xl md:text-7xl font-black tracking-tight text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-cyan-200 transition-all duration-500">
+                <h3 className="text-4xl md:text-7xl font-black tracking-tight text-white mb-6 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-white group-hover:to-cyan-200 transition-all duration-500">
                   {project.name}
                 </h3>
                 <p className="text-gray-400 max-w-lg text-lg leading-relaxed mb-8 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 line-clamp-2 md:line-clamp-none">
@@ -433,7 +434,7 @@ const Projects = () => {
             as={motion.div}
             open={!!selected}
             onClose={() => setSelected(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 pointer-events-auto"
+            className="fixed inset-0 z-100 flex items-center justify-center p-4 md:p-8 pointer-events-auto"
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -447,7 +448,7 @@ const Projects = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 40 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-5xl bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-8 md:p-14 shadow-2xl overflow-y-auto max-h-[90vh] flex flex-col"
+              className="relative w-full max-w-5xl bg-[#0a0a0a] border border-white/10 rounded-4xl p-8 md:p-14 shadow-2xl overflow-y-auto max-h-[90vh] flex flex-col"
             >
               <div className="absolute top-[-20%] right-[-10%] w-[30vh] h-[30vh] rounded-full bg-cyan-600/10 blur-[100px] pointer-events-none" />
 
@@ -492,10 +493,10 @@ const Projects = () => {
                 </div>
 
                 {/* Galería de Imágenes */}
-                <div className="bg-white/[0.02] border border-white/[0.05] rounded-3xl p-6 min-h-[300px]">
+                <div className="bg-white/2 border border-white/5 rounded-3xl p-6 min-h-75">
                   <h4 className="text-sm font-mono text-gray-500 uppercase tracking-widest mb-6">Galería Visual</h4>
                   {selected.images && selected.images.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-h-125 overflow-y-auto pr-2 custom-scrollbar">
                       {selected.images.map((img, i) => (
                         <div
                           key={i}
@@ -510,7 +511,7 @@ const Projects = () => {
                       ))}
                     </div>
                   ) : (
-                    <div className="flex items-center justify-center h-full min-h-[200px] text-gray-600 font-mono italic">
+                    <div className="flex items-center justify-center h-full min-h-50 text-gray-600 font-mono italic">
                       <p>Aún no hay imágenes disponibles para este proyecto.</p>
                     </div>
                   )}
@@ -529,14 +530,14 @@ const Projects = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 md:p-10 select-none"
+              className="fixed inset-0 z-9999 bg-black/95 backdrop-blur-2xl flex items-center justify-center p-4 md:p-10 select-none"
               onClick={closeLightbox}
             >
-              <button onClick={closeLightbox} className="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white transition-colors bg-white/5 hover:bg-white/20 p-4 rounded-full z-[10000]">
+              <button onClick={closeLightbox} className="absolute top-6 right-6 md:top-10 md:right-10 text-white/50 hover:text-white transition-colors bg-white/5 hover:bg-white/20 p-4 rounded-full z-10000">
                 <FaTimes size={24} />
               </button>
 
-              <button onClick={prevImage} className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-white/5 hover:bg-white/20 p-4 rounded-full z-[10000]">
+              <button onClick={prevImage} className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-white/5 hover:bg-white/20 p-4 rounded-full z-10000">
                 <FaChevronLeft size={24} />
               </button>
 
@@ -546,17 +547,17 @@ const Projects = () => {
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 exit={{ opacity: 0, scale: 0.9, x: -50 }}
                 transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                src={lightboxImage.src}
+                src={getPublicAsset(lightboxImage.src)}
                 alt="Vista ampliada"
                 className="max-h-[90vh] max-w-full object-contain rounded-xl shadow-[0_0_100px_rgba(255,255,255,0.05)]"
                 onClick={(e) => e.stopPropagation()}
               />
 
-              <button onClick={nextImage} className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-white/5 hover:bg-white/20 p-4 rounded-full z-[10000]">
+              <button onClick={nextImage} className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-white/5 hover:bg-white/20 p-4 rounded-full z-10000">
                 <FaChevronRight size={24} />
               </button>
 
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 font-mono text-sm px-6 py-2 bg-white/10 rounded-full backdrop-blur-md z-[10000]">
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 font-mono text-sm px-6 py-2 bg-white/10 rounded-full backdrop-blur-md z-10000">
                 {lightboxImage.idx + 1} / {lightboxImage.images.length}
               </div>
             </motion.div>
@@ -622,7 +623,7 @@ const ExperienceAndAbout = () => {
           }].map((item, i) => (
             <div key={i} className="relative pl-16 group">
               {/* Dot */}
-              <div className={`absolute left-[19px] top-[10px] w-3 h-3 rounded-full ${item.color} shadow-[0_0_15px_currentColor] group-hover:scale-150 transition-transform duration-300`} />
+              <div className={`absolute left-4.75 top-2.5 w-3 h-3 rounded-full ${item.color} shadow-[0_0_15px_currentColor] group-hover:scale-150 transition-transform duration-300`} />
 
               <div className="text-sm font-mono text-gray-500 mb-2">{item.date}</div>
               <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">{item.title}</h3>
@@ -644,7 +645,7 @@ const Contact = () => {
       transition={{ duration: 0.8 }}
       className="py-32 relative z-10 w-full text-center"
     >
-      <div className="max-w-4xl mx-auto border border-white/10 bg-white/[0.02] p-12 md:p-24 rounded-[3rem] backdrop-blur-3xl relative overflow-hidden group">
+      <div className="max-w-4xl mx-auto border border-white/10 bg-white/2 p-12 md:p-24 rounded-[3rem] backdrop-blur-3xl relative overflow-hidden group">
         <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/10 to-transparent pointer-events-none opacity-50" />
         <div className="absolute top-[-50%] left-[-10%] w-[500px] h-[500px] bg-violet-600/20 blur-[150px] pointer-events-none rounded-full group-hover:bg-violet-500/30 transition-colors duration-700" />
 
